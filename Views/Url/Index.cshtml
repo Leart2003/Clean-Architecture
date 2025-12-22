@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] ="All short links";
+}
+
+<div class="container">
+<a class="btn btn-outline-sucess" asp-controller="Home" asp-action="Index" >
+Add new</a>
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+        <th scope="col">#</th>
+        <th scope="col">Orgina link</th>
+        <th scope="col">Shorten link</th>
+        <th scope="col">Number of cliks</th>
+        <th scope="col">#USer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="btn btn-outline-danger" asp-controller="Url" asp-action="Remove"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
