@@ -32,12 +32,12 @@
                         
                     </ul>
                 </div>
-                <a class="btn btn-outline-success my-2 my-sm-0 btn-login" asp-controller="Authentication" asp-action="Login" >
+                <a  href="/Authentication/Login"  class="btn btn-outline-success my-2 my-sm-0 btn-login">
                     Login
                 </a>
                 <span style="padding: 5px;"></span>
-                <a class="btn btn-outline-primary my-2 my-sm-0 btn-register" asp-controller="Authentication" asp-action="Register">
-                    Login
+                <a class="btn btn-outline-primary my-2 my-sm-0 btn-register" href="/Authentication/Register">
+                    Register
                 </a>
             </div>
         </nav>
@@ -61,8 +61,8 @@
     </footer>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script> *@
+    
 </body>
 </html>

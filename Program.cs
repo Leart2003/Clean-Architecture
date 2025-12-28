@@ -29,6 +29,10 @@ namespace ShortUrl
             app.MapStaticAssets();
             app.MapControllerRoute(
                 name: "default",
+                pattern: "{controller=Home}/{action=Index}/{userIDd}/{linkId}")
+                .WithStaticAssets();
+            app.MapControllerRoute(
+                name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
 

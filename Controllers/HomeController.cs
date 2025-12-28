@@ -23,6 +23,11 @@ namespace ShortUrl.Controllers
             return View();
         }
 
-      
+        public IActionResult Remove(int linkToRemove)
+        {
+            return View();
+        }
+
+
     }
 }

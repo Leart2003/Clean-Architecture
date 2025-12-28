@@ -14,5 +14,15 @@ namespace ShortUrl.Controllers
 
             return View();
         }
+        public IActionResult LoginSubmit(string emailAdress, string password)
+        {
+
+            return View();
+        }
+        public IActionResult Register()
+        {
+
+            return View();
+        }
     }
 }
