@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using ShortUrl.Data.ViewModel;
 
 
 namespace ShortUrl.Controllers
@@ -15,7 +16,8 @@ namespace ShortUrl.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            PostUrlVm newUrl =  new PostUrlVm();
+            return View(newUrl);
         }
 
         public IActionResult Privacy()
@@ -28,6 +30,14 @@ namespace ShortUrl.Controllers
             return View();
         }
 
+        public IActionResult ShortenUrl(PostUrlVm postUrlVm)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Index", postUrlVm);
+            }
+            return View("Index");
+        }
 
     }
 }
