@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShortUrl.Data.ViewModel;
 
 namespace ShortUrl.Controllers
 {
@@ -11,13 +12,15 @@ namespace ShortUrl.Controllers
 
         public IActionResult Login()
         {
-
-            return View();
+         
+            return View(new LoginVm());
         }
-        public IActionResult LoginSubmit(string emailAdress, string password)
+        [HttpPost]
+        public IActionResult LoginSubmit(LoginVm model)
         {
+            return RedirectToAction("Index", "Home");
 
-            return View();
+         
         }
         public IActionResult Register()
         {

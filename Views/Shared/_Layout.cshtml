@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ShortUrl.styles.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
@@ -36,7 +37,7 @@
                     Login
                 </a>
                 <span style="padding: 5px;"></span>
-                <a class="btn btn-outline-primary my-2 my-sm-0 btn-register" href="/Authentication/Register">
+                <a class="btn btn-outline-primary my-2 my-sm-0 btn-register" asp-controller="Authentication" asp-action="Register">
                     Register
                 </a>
             </div>
