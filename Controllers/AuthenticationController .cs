@@ -27,10 +27,17 @@ namespace ShortUrl.Controllers
 
          
         }
-        public IActionResult Register()
+        public IActionResult Register(RegisterVM registerVM)
         {
 
             return View();
         }
+        public IActionResult RegisterUser(RegisterVM registerVM) {
+
+
+            return RedirectToAction("Index","Home");
+        
+         }
+            
     }
 }
