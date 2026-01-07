@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DbMenagment\DbMenagment.csproj" />
     <ProjectReference Include="..\Shortly.Redirect\Shortly.Redirect.csproj" />
   </ItemGroup>
 
