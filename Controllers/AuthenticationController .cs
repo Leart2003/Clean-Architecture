@@ -31,7 +31,7 @@ namespace ShortUrl.Controllers
         {
 
             return View();
-        }
+        }   
         public IActionResult RegisterUser(RegisterVM registerVM) {
 
 

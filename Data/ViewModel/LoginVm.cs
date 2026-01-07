@@ -1,11 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Shortly.Redirect.Helpers.Validators;
+
 
 namespace ShortUrl.Data.ViewModel
 {
     public class LoginVm
     {
         [Required(ErrorMessage ="Email adress is required")]
-        [EmailAddress(ErrorMessage ="Invalid email adress")]
+        [CustomEmailValidator]
         public string EmailAddress { get; set; }
 
         [Required(ErrorMessage ="Password is requried")]
