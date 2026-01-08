@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ShortUrl.Data.Models;
+using DbMenagment.Models;
 
 namespace ShortUrl.Controllers
 {
