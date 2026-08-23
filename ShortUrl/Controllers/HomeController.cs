@@ -60,7 +60,8 @@ namespace ShortUrl.Controllers
 
             _appDbContext.Urls.Add(newUrl);
             await _appDbContext.SaveChangesAsync();
-            TempData["Message"] = $"Your url was shortened successfully to {newUrl.ShortLink}";
+            string localHost = "https://localhost:7063/";
+            TempData["Message"] = $"Your url was shortened successfully to {localHost+newUrl.ShortLink}";
             return View("Index");
         }
         private string GenerateShortUrl(int length)
