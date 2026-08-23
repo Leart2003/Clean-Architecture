@@ -190,3 +190,4 @@ C:\Users\malok\source\repos\UrlShortenSystem\Shortly.Redirect\bin\Debug\net9.0\r
 C:\Users\malok\source\repos\UrlShortenSystem\Shortly.Redirect\bin\Debug\net9.0\DbMenagment.dll
 C:\Users\malok\source\repos\UrlShortenSystem\Shortly.Redirect\bin\Debug\net9.0\DbMenagment.pdb
 C:\Users\malok\source\repos\UrlShortenSystem\Shortly.Redirect\obj\Debug\net9.0\Shortly.Redirect.sourcelink.json
+C:\Users\malok\source\repos\UrlShortenSystem\Shortly.Redirect\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
