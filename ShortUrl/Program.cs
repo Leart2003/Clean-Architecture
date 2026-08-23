@@ -49,7 +49,7 @@ namespace ShortUrl
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
 
-                options.SignIn.RequireConfirmedEmail = true;
+                options.SignIn.RequireConfirmedEmail = false;
             });
 
             builder.Services.AddScoped<IUrlService, UrlService>();

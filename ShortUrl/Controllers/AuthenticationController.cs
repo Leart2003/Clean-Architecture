@@ -56,7 +56,7 @@ namespace ShortUrl.Controllers
             if (user == null)
             {
                 ModelState.AddModelError("", "Invalid login attempt. Please, check your username and password");
-                return View("Login", "ShortenUrl");
+                return View("Login", "loginVM");
             }
 
             var userPasswordCheck = await _userManger.CheckPasswordAsync(user, loginVM.Password);
