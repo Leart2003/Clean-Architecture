@@ -43,9 +43,54 @@ namespace ShortUrl.Controllers
         {
             return View(new RegisterVM());
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LoginSubmitted(LoginVm loginVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Login", loginVM);
+            }
+
+            var user = await _userManger.FindByEmailAsync(loginVM.EmailAddress);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid login attempt. Please, check your username and password");
+                return View("Login", "ShortenUrl");
+            }
+
+            var userPasswordCheck = await _userManger.CheckPasswordAsync(user, loginVM.Password);
+            if (userPasswordCheck)
+            {
+                var userLoggedIn = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+
+                if (userLoggedIn.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+               
+                else
+                {
+                    ModelState.AddModelError("", "Invalid login attempt. Please, check your username and password");
+                    return View("Login", loginVM);
+                }
+            }
+            else
+            {
+                await _userManger.AccessFailedAsync(user);
+
+                if (await _userManger.IsLockedOutAsync(user))
+                {
+                    ModelState.AddModelError("", "Your account is locked, please try again in 10 mins");
+                    return View("Login", loginVM);
+                }
+
+                ModelState.AddModelError("", "Invalid login attempt. Please, check your username and password");
+                return View("Login", loginVM);
+            }
+        }
 
 
-     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RegisterUser(RegisterVM registerVM)
