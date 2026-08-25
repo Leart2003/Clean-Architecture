@@ -1,5 +1,6 @@
 using DbMenagment;
 using DbMenagment.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ShortUrl.Data.ViewModel;
 using System;
@@ -41,6 +42,7 @@ namespace ShortUrl.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> ShortenUrl(PostUrlVm postUrlVm)
         {
             if (!ModelState.IsValid)
