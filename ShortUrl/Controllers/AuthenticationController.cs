@@ -25,6 +25,10 @@ namespace ShortUrl.Controllers
             _userManger = userManager;
             _configuration = configuration;
         }
+        /// <summary>
+        /// Gets all users
+        /// </summary>
+        /// <returns>Returns all the users if role is admin</returns>
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Users()
         {
@@ -90,7 +94,11 @@ namespace ShortUrl.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Registers a user
+        /// </summary>
+        /// <param name="registerVM">Registers the user with given inforamtion</param>
+        /// <returns>Returns user registered succesfully if doesnt exist</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RegisterUser(RegisterVM registerVM)
