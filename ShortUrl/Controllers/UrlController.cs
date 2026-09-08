@@ -4,7 +4,6 @@ using DbMenagment.Interfaces;
 using DbMenagment.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Shortly.Redirect.Helpers.Roles;
 using ShortUrl.Data.ViewModel;
 using System.Security.Claims;
